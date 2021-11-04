@@ -45,10 +45,10 @@ public class GUI extends Component implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         String command = e.getActionCommand();
-        if (command.equals("button1")) {
+        if (command.equals("Button 1")) {
             myMethod();
         }
-        else if ("button2" == e.getSource()) {
+        else if ("Button 2" == e.getSource()) {
             myMethod();//other method
             System.out.println("stre");
         }
