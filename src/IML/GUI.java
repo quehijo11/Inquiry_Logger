@@ -21,12 +21,14 @@ public class GUI extends Component implements ActionListener {
         JButton button1 = new JButton("Button 1");
         JButton button2 = new JButton("Button 2");
 
+        
+         //button placement, will do better later
         frame.getContentPane().add(BorderLayout.SOUTH, button1);
         frame.getContentPane().add(BorderLayout.NORTH, button2);
 
         //mainPanel.add( button3 );
 
-
+        //basically makes the buttons on-click
         button1.addActionListener(this);
         button2.addActionListener(this);
 
@@ -43,12 +45,12 @@ public class GUI extends Component implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        //this is where the buttons will call functions, 
         String command = e.getActionCommand();
         if (command.equals("Button 1")) {
             myMethod();
         }
-        else if ("Button 2" == e.getSource()) {
+        else if (command.equals("Button 2")) {
             myMethod();//other method
             System.out.println("stre");
         }
