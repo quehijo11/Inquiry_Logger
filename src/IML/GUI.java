@@ -1,14 +1,16 @@
 package IML;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JTextField;
+import java.awt.event.*;
 
 
-public class GUI extends Component implements ActionListener {
+
+public class GUI extends JFrame implements ActionListener {
     private JPanel mainPanel;
 
     public void run() {
@@ -21,23 +23,27 @@ public class GUI extends Component implements ActionListener {
         JButton button1 = new JButton("Button 1");
         JButton button2 = new JButton("Button 2");
 
-        
-         //button placement, will do better later
+        //button placement
         frame.getContentPane().add(BorderLayout.SOUTH, button1);
         frame.getContentPane().add(BorderLayout.NORTH, button2);
-
-        //mainPanel.add( button3 );
 
         //basically makes the buttons on-click
         button1.addActionListener(this);
         button2.addActionListener(this);
 
-
+        /*
         //drop down
-        //String[] Insturments = { "Piano",  }; //all the insturments
-        // JComboBox inList = new JComboBox(Insturments);
-        // inList.setSelectedIndex(4);
-        //inList.addActionListener(this);
+        String[] Insturments = { "Piano",  }; //all the insturments
+        int num = 5 //number of instuements
+        JComboBox inList = new JComboBox(Insturments);
+        inList.setSelectedIndex(4);
+        inList.addActionListener(this);
+        JComboBox cb = (JComboBox)e.getSource();
+        String petName = (String)cb.getSelectedItem();
+        updateLabel(petName);
+    }
+/*/
+
 
 
         frame.setVisible(true);
@@ -45,18 +51,18 @@ public class GUI extends Component implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //this is where the buttons will call functions, 
         String command = e.getActionCommand();
         if (command.equals("Button 1")) {
             myMethod();
         }
         else if (command.equals("Button 2")) {
             myMethod();//other method
-            System.out.println("stre");
         }
         else if (command.equals("NewInquire")){
-            InquiryGUI.run();//call other GUI
+            InquiryGUI Steve = new InquiryGUI();
+                    Steve.run();//call other GUI??? or next window
         }
+
 
     }
 
@@ -67,3 +73,5 @@ public class GUI extends Component implements ActionListener {
 
 
 }
+
+
