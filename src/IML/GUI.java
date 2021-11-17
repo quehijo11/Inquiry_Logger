@@ -11,7 +11,7 @@ import java.awt.event.*;
 
 
 public class GUI extends JFrame implements ActionListener {
-    private JPanel mainPanel;
+    //private JPanel mainPanel;
 
     public void run() {
         JFrame frame = new JFrame("Title"); //Name of program
